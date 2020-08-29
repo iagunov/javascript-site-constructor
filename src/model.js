@@ -1,3 +1,6 @@
+import image from './assets/javascript.png'
+import {} from './classes/blocks'
+
 export const model = [
     {type: 'title', value: 'Test title', options: {
         tag: 'h5',
@@ -13,5 +16,10 @@ export const model = [
         '4 text'
     ], options: {
         styles: 'background: darkred; color: #fff; padding: 1rem;'
+    }},
+    {type: 'image', value: image, options: {
+        styles: 'padding: 2rem 0; display: flex; justify-content: center;',
+        alt: 'myImage',
+        imageStyles: 'width: 500px, height: auto;'
     }}
 ]

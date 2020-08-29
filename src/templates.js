@@ -11,18 +11,20 @@ function title(block) {
 }
 
 function text(block) {
-    const {tag,styles} = block.options
-
     return row(col(`
             <p>${block.value}</p>
-    `), styles)
+    `), block.options.styles)
 }
 
 function textColums(block) {
-    const {tag,styles} = block.options
-
     const html = block.value.map(item => col(item))
-    return row(html.join(''), styles)
+    return row(html.join(''), block.options.styles)
 }
 
-export const templates = {title,text,textColums}
+function image(block) {
+    const {alt, styles, imageStyles} = block.options
+    const html = `<img src="${block.value}" alt="${alt}" style="${imageStyles}" />`
+    return row(html, styles)
+}
+
+export const templates = {title,text,textColums, image}
