@@ -1,25 +1,20 @@
 import image from './assets/javascript.png'
-import {} from './classes/blocks'
+import {TextBlock, TitleBlock, ImageBlock, TextColumsBlock} from './classes/blocks'
 
 export const model = [
-    {type: 'title', value: 'Test title', options: {
+    new TitleBlock('Test title', {
         tag: 'h5',
         styles: 'background: darkred; color: #fff; text-align: center;'
-    }},
-    {type: 'text', value: 'Lorem ipsum dolor sit amet consectetur', options: {
+    } ),
+    new TextBlock('Lorem ipsum dolor sit amet consectetur', {
         styles: 'background: yellow; color: #fff;'
-    }},
-    {type: 'textColums', value: [
-        '1 text',
-        '2 text',
-        '3 text',
-        '4 text'
-    ], options: {
+    }),
+    new TextColumsBlock(['1 text','2 text','3 text'], {
         styles: 'background: darkred; color: #fff; padding: 1rem;'
-    }},
-    {type: 'image', value: image, options: {
+    }),
+    new ImageBlock( image, {
         styles: 'padding: 2rem 0; display: flex; justify-content: center;',
         alt: 'myImage',
         imageStyles: 'width: 500px, height: auto;'
-    }}
+    })
 ]
