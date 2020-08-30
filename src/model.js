@@ -1,10 +1,16 @@
 import image from './assets/javascript.png'
 import {TextBlock, TitleBlock, ImageBlock, TextColumsBlock} from './classes/blocks'
+import {css} from './utils'
 
 export const model = [
     new TitleBlock('Test title', {
         tag: 'h5',
-        styles: 'background: darkred; color: #fff; text-align: center;'
+        styles: css({
+            background: 'darkred',
+            color: '#fff',
+            'text-align': 'center'
+        }),
+        // styles: 'background: darkred; color: #fff; text-align: center;'
     } ),
     new TextBlock('Lorem ipsum dolor sit amet consectetur', {
         styles: 'background: yellow; color: #fff;'
